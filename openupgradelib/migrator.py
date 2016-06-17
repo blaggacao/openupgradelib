@@ -170,7 +170,7 @@ class Migrator(object):
                     JOIN information_schema.constraint_column_usage AS ccu
                     ON tc.constraint_name = ccu.constraint_name
                 WHERE
-                    kcu.constraint_type = 'FOREIGN KEY' AND
+                    tc.constraint_type = 'FOREIGN KEY' AND
                     ccu.table_name = %s
             """,
             (table_name,)
